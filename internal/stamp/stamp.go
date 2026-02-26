@@ -21,7 +21,7 @@ func NewTextWatermark(text string) *model.Watermark {
 	wm.Mode = model.WMText
 	wm.TextString = text
 	wm.TextLines = []string{text}
-	wm.OnTop = false
+	wm.OnTop = true
 	wm.Pos = types.Center
 	wm.Diagonal = model.DiagonalLLToUR
 	wm.UserRotOrDiagonal = true
