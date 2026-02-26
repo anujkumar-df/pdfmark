@@ -1,24 +1,17 @@
 package csvparse
 
 import (
-	"bytes"
 	"errors"
 	"io"
 	"strings"
 	"testing"
 
 	"github.com/anujkumar-df/pdfmark/internal/errs"
+	"github.com/anujkumar-df/pdfmark/internal/testutil"
 )
 
 func csvString(lines ...string) io.Reader {
-	var buf bytes.Buffer
-	for i, line := range lines {
-		buf.WriteString(line)
-		if i < len(lines)-1 {
-			buf.WriteByte('\n')
-		}
-	}
-	return &buf
+	return testutil.CSVString(lines...)
 }
 
 func TestParse_Valid(t *testing.T) {
